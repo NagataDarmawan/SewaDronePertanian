@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { CONTACT_DATA } from '@/constants/contactData';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, ShieldAlert } from 'lucide-react';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -17,7 +17,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
       
-      {/* Hero Full-Frame Section (Tetap normal tanpa rounded bawah) */}
+      {/* Hero Full-Frame Section */}
       <div 
         className="relative h-[50vh] w-full bg-cover bg-center flex items-end pb-8 sm:pb-10" 
         style={{ backgroundImage: `url('${CONTACT_DATA.backgroundImage}')` }}
@@ -38,11 +38,11 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Main Content: Info & Form (Ditarik ke atas menimpa hero dengan rounded-t-[32px]) */}
+      {/* Main Content: Info & Form */}
       <section className="relative z-20 -mt-6 sm:-mt-8 py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white rounded-t-[32px]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Kolom Kiri: Informasi Kontak & Sosial Media */}
+          {/* Kolom Kiri: Informasi Kontak, Cakupan Wilayah & Sosial Media */}
           <div className="lg:col-span-5 space-y-8">
             <ScrollReveal>
               <div>
@@ -86,6 +86,21 @@ export default function ContactPage() {
                   </div>
                 </div>
 
+                {/* Box Cakupan Layanan & Catatan Khusus dari CONTACT_DATA */}
+                <div className="mt-8 p-5 rounded-2xl bg-gray-50 border border-gray-200/80 space-y-3">
+                  <div className="flex items-center gap-2.5 text-gray-900 font-bold text-sm">
+                    <MapPin className="w-4 h-4 text-[var(--green-dark)]" />
+                    <span>Cakupan Wilayah Layanan</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Saat ini area operasional utama kami mencakup wilayah <strong className="text-gray-900">{CONTACT_DATA.coverage}</strong>, dan sekitarnya di jalur Pantura.
+                  </p>
+                  <div className="pt-2 border-t border-gray-200/60 flex items-start gap-2 text-xs text-gray-600">
+                    <ShieldAlert className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <span>{CONTACT_DATA.coverageNote}</span>
+                  </div>
+                </div>
+
                 {/* Sosial Media dengan SVG */}
                 <div className="mt-8 pt-8 border-t border-gray-200">
                   <h3 className="text-sm font-bold text-gray-900 mb-4">Media Sosial</h3>
@@ -111,7 +126,7 @@ export default function ContactPage() {
             </ScrollReveal>
           </div>
 
-          {/* Kolom Kanan: Form Kontak (Background Hijau) */}
+          {/* Kolom Kanan: Form Kontak */}
           <div className="lg:col-span-7">
             <ScrollReveal delay={200}>
               <div className="p-8 sm:p-10 rounded-3xl bg-[var(--green-dark)] text-white shadow-xl border border-white/10">

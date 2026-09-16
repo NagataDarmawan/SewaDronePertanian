@@ -2,6 +2,8 @@
 
 import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { ShieldAlert } from 'lucide-react';
+import { CONTACT_DATA } from '@/constants/contactData';
 
 export default function CoverageMapSection() {
   const cities = [
@@ -37,7 +39,7 @@ export default function CoverageMapSection() {
         </div>
 
         {/* Area Peta dengan Zoom dan Scroll Horizontal di Mobile */}
-        <div className="w-full overflow-x-auto pb-2 scrollbar-none">
+        <div className="w-full overflow-x-auto pb-0 scrollbar-none">
           <div className="relative min-w-[950px] sm:min-w-full mx-auto min-h-[350px] sm:min-h-[450px] flex items-center justify-center py-2">
             
             <img 
@@ -69,6 +71,14 @@ export default function CoverageMapSection() {
             ))}
 
           </div>
+        </div>
+
+        {/* Catatan Info Cakupan di Luar Wilayah (Nama kota dicetak tebal) */}
+        <div className="-mt-3 sm:-mt-4 relative z-20 max-w-2xl mx-auto p-3.5 sm:p-4 rounded-xl bg-gray-50 border border-gray-200/80 flex items-start gap-3 shadow-sm">
+          <ShieldAlert className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Lokasi lahan Anda berada di luar area <strong className="text-gray-900">{CONTACT_DATA.coverage}</strong>? Silakan hubungi tim kami terlebih dahulu untuk konfirmasi ketersediaan armada dan jadwal layanan.
+          </p>
         </div>
 
       </div>

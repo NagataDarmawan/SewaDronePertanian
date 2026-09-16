@@ -3,7 +3,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import AboutSection from "@/components/sections/about/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
-import WorkFlowSection from "@/components/sections/WorkflowSection";
+import WorkFlowSection from "@/components/sections/AdvantageSection";
 import GallerySection from "@/components/sections/GallerySection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
