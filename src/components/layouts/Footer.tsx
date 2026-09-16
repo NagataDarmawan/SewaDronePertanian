@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Cpu, Mail, Phone, MapPin } from 'lucide-react';
+import { Cpu, Mail, Phone, MapPin, Code2 } from 'lucide-react';
 import { SITE_CONFIG } from '@/constants/siteConfig';
 import { CONTACT_DATA } from '@/constants/contactData';
 import { FOOTER_DATA } from '@/constants/footerData';
@@ -109,9 +109,16 @@ export default function Footer() {
 
         </div>
 
-        {/* Copyright */}
+        {/* Copyright & Author Card */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[var(--white)]/50 gap-4">
           <p>© {new Date().getFullYear()} {SITE_CONFIG.name}. Hak Cipta Dilindungi.</p>
+          
+          {/* Card Dibuat Oleh */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-[var(--white)]/80 shadow-inner">
+            <Code2 className="w-3.5 h-3.5 text-[var(--green-bright,#22c55e)]" />
+            <span>Dibuat Oleh : <strong className="text-[var(--green-bright,#22c55e)] font-bold">Nagata Darmawan</strong></span>
+          </div>
+
           <div className="flex gap-6">
             <a href="#" className="hover:text-[var(--white)] transition-colors">Kebijakan Privasi</a>
             <a href="#" className="hover:text-[var(--white)] transition-colors">Syarat & Ketentuan</a>

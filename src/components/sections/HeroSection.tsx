@@ -6,13 +6,12 @@ import { useAutoSlide } from '@/animations/useAutoSlide';
 import SliderButton from '@/components/ui/SliderButton';
 import Button from '@/components/ui/Button';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { ArrowRight } from 'lucide-react';
 
 export default function HeroSection() {
   const { currentIndex, nextSlide, prevSlide, setCurrentIndex } = useAutoSlide(HERO_DATA.slides.length, 6000);
 
   return (
-    <section className="relative h-screen w-full flex items-end overflow-hidden bg-black pb-16 lg:pb-24">
+    <section className="relative h-screen w-full flex items-end overflow-hidden bg-black pb-8 sm:pb-12 lg:pb-16">
       
       {/* Background Images dengan Transisi Halus */}
       {HERO_DATA.slides.map((slide, index) => (
@@ -23,7 +22,6 @@ export default function HeroSection() {
           }`}
           style={{ backgroundImage: `url(${slide.image})` }}
         >
-          {/* Gradasi Sinematik Hitam Pekat yang Langsung Menyatu ke Hitam Polos di Bagian Bawah */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30"></div>
         </div>
       ))}
@@ -31,8 +29,7 @@ export default function HeroSection() {
       {/* Area Konten Bawah Kiri */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 flex flex-col justify-end">
         
-        {/* Kontainer Teks Bersih Tanpa Box */}
-        <div className="max-w-2xl mb-6 relative min-h-[190px] flex flex-col justify-center">
+        <div className="max-w-2xl mb-4 sm:mb-6 relative min-h-[140px] sm:min-h-[180px] flex flex-col justify-end">
           
           {HERO_DATA.slides.map((slide, index) => (
             <div
@@ -43,25 +40,24 @@ export default function HeroSection() {
                   : 'opacity-0 translate-y-6 absolute inset-0 pointer-events-none'
               }`}
             >
-              {/* Dibungkus ScrollReveal agar terpicu saat di-scroll */}
               <ScrollReveal>
-                <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-3 text-[var(--green-bright)] drop-shadow-md">
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-2 sm:mb-3 text-[var(--green-bright)] drop-shadow-md">
                   {slide.title}
                 </h1>
               </ScrollReveal>
               
               <ScrollReveal delay={100}>
-                <p className="text-base sm:text-lg text-[var(--white)]/90 leading-relaxed drop-shadow-sm max-w-xl mb-6">
+                <p className="text-xs sm:text-base lg:text-lg text-[var(--white)]/90 leading-relaxed drop-shadow-sm max-w-xl mb-4 sm:mb-6">
                   {slide.description}
                 </p>
               </ScrollReveal>
 
-              {/* Tombol Lihat Layanan */}
               <ScrollReveal delay={200}>
                 <div className="flex items-center gap-4">
                   <Button 
                     href="#services" 
                     variant="white"
+                    className="px-6 py-3 sm:px-8 sm:py-4 text-xs sm:text-base shadow-lg"
                   >
                     <span>Lihat Layanan</span>
                   </Button>
@@ -72,28 +68,36 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Baris Bawah: Indikator Timer & Tombol Navigasi */}
-        <div className="flex items-center justify-between">
+        {/* Baris Bawah: Indikator & Navigasi Rapat ke Bawah */}
+        <div className="flex items-center justify-between border-t border-white/10 pt-4">
           
-          {/* Indikator dengan Efek Progress Bar */}
-          <div className="flex items-center gap-2">
-            {HERO_DATA.slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer overflow-hidden bg-white/30 ${
-                  index === currentIndex ? 'w-12 bg-white/20' : 'w-3 hover:bg-white/50'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              >
-                {index === currentIndex && (
-                  <div className="h-full bg-[var(--green-bright)] animate-[progress_6s_linear_infinite]" />
-                )}
-              </button>
-            ))}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 font-mono text-xs text-white/80 tracking-widest">
+              <span className="text-[var(--green-bright)] font-bold">
+                {String(currentIndex + 1).padStart(2, '0')}
+              </span>
+              <span className="text-white/40">/</span>
+              <span>{String(HERO_DATA.slides.length).padStart(2, '0')}</span>
+            </div>
+
+            <div className="hidden sm:flex items-center gap-2 ml-4">
+              {HERO_DATA.slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`h-1 rounded-full transition-all duration-500 cursor-pointer overflow-hidden bg-white/20 ${
+                    index === currentIndex ? 'w-10 bg-white/30' : 'w-2 hover:bg-white/40'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                >
+                  {index === currentIndex && (
+                    <div className="h-full bg-[var(--green-bright)] animate-[progress_6s_linear_infinite]" />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Tombol Kanan-Kiri */}
           <div className="flex items-center gap-3">
             <SliderButton direction="left" onClick={prevSlide} />
             <SliderButton direction="right" onClick={nextSlide} />

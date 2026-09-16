@@ -3,11 +3,14 @@
 import React from 'react';
 import { CTA_DATA } from '@/constants/ctaData';
 import { SERVICES_DATA } from '@/constants/servicesData';
+import { SITE_CONFIG } from '@/constants/siteConfig';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import Button from '@/components/ui/Button';
 import { MessageCircle } from 'lucide-react';
 
 export default function CTASection() {
+  const ctaUrl = `${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent(SITE_CONFIG.ctaMessageTemplate)}`;
+
   return (
     <section className="relative z-10 overflow-hidden w-full bg-black">
       
@@ -43,7 +46,7 @@ export default function CTASection() {
               <ScrollReveal delay={200}>
                 <div>
                   <Button
-                    href={CTA_DATA.buttonLink}
+                    href={ctaUrl}
                     variant="white"
                     target="_blank"
                     rel="noopener noreferrer"

@@ -13,7 +13,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="relative z-30 -mb-10 sm:-mb-14 pt-10 pb-20 lg:pt-16 lg:pb-28 bg-white text-gray-900 overflow-hidden w-full rounded-b-3xl sm:rounded-b-[32px] shadow-xl">
+    <section id="faq" className="relative z-30 -mb-10 sm:-mb-14 pt-10 pb-20 lg:pt-16 lg:pb-28 bg-white text-gray-900 overflow-hidden w-full rounded-b-3xl sm:rounded-b-[32px] shadow-xl">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-10 sm:mb-12">

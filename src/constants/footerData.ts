@@ -10,10 +10,10 @@ export const FOOTER_DATA = {
     {
       title: "Layanan Utama",
       items: [
-        { label: "Penyemprotan Presisi", href: "#services" },
-        { label: "Penebaran Benih", href: "#services" },
-        { label: "Kargo & Angkut Panen", href: "#services" },
-        { label: "Pemetaan Lahan", href: "#services" },
+        { label: "Penyemprotan Lahan", href: "/#services" },
+        { label: "Pengangkutan Logistik Tani", href: "/#services" },
+        { label: "Tebar Benih & Granul", href: "/#services" },
+        { label: "Penyerbukan Buatan", href: "/#services" },
       ],
     },
   ],

@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { WORKFLOW_DATA } from '@/constants/workflowData';
+import { ADVANTAGE_DATA } from '@/constants/advantageData';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
-export default function WorkFlowSection() {
+export default function AdvantageSection() {
   return (
-    <section id="cara-kerja" className="relative z-20 -mt-6 sm:-mt-8 bg-white rounded-t-3xl sm:rounded-t-[32px] py-10 lg:py-16 overflow-hidden">
+    <section id="keunggulan" className="relative z-20 -mt-6 sm:-mt-8 bg-white rounded-t-3xl sm:rounded-t-[32px] py-10 lg:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Layout 2 Kolom */}
@@ -27,7 +27,7 @@ export default function WorkFlowSection() {
                 <div className="absolute top-0 left-0 w-[58%] h-[72%] shadow-2xl z-10 bg-gray-100">
                   <div 
                     className="w-full h-full bg-cover bg-center"
-                    style={{ backgroundImage: `url('${WORKFLOW_DATA.images[0]}')` }}
+                    style={{ backgroundImage: `url('${ADVANTAGE_DATA.images[0]}')` }}
                   />
                 </div>
 
@@ -35,7 +35,7 @@ export default function WorkFlowSection() {
                 <div className="absolute bottom-0 right-0 w-[58%] h-[72%] shadow-2xl z-20 bg-gray-100">
                   <div 
                     className="w-full h-full bg-cover bg-center"
-                    style={{ backgroundImage: `url('${WORKFLOW_DATA.images[1]}')` }}
+                    style={{ backgroundImage: `url('${ADVANTAGE_DATA.images[1]}')` }}
                   />
                 </div>
 
@@ -43,42 +43,42 @@ export default function WorkFlowSection() {
             </ScrollReveal>
           </div>
 
-          {/* Kolom Kanan: Judul, Deskripsi, & Poin 01-04 */}
+          {/* Kolom Kanan: Judul, Deskripsi, & Poin Keunggulan */}
           <div className="lg:col-span-7 space-y-6 flex flex-col justify-center">
             
             {/* Header Teks */}
             <div>
               <ScrollReveal>
                 <span className="text-[var(--green-dark)] font-mono text-xs tracking-widest uppercase font-semibold block mb-2">
-                  {WORKFLOW_DATA.subtitle}
+                  {ADVANTAGE_DATA.subtitle}
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 leading-tight">
-                  {WORKFLOW_DATA.title}
+                  {ADVANTAGE_DATA.title}
                 </h2>
               </ScrollReveal>
               
               <ScrollReveal delay={100}>
                 <p className="text-base text-gray-600 leading-relaxed mt-3">
-                  {WORKFLOW_DATA.description}
+                  {ADVANTAGE_DATA.description}
                 </p>
               </ScrollReveal>
             </div>
 
-            {/* Daftar Poin 01-04 */}
+            {/* Daftar Poin Keunggulan */}
             <div className="space-y-4 pt-1">
-              {WORKFLOW_DATA.steps.map((step, index) => (
-                <ScrollReveal key={step.id} delay={150 + (index * 100)}>
+              {ADVANTAGE_DATA.advantages.map((item, index) => (
+                <ScrollReveal key={item.id} delay={150 + (index * 100)}>
                   <div>
                     <div className="flex items-baseline gap-3 mb-1">
                       <span className="font-extrabold text-[var(--green-dark)] text-xl sm:text-2xl">
-                        {step.id}
+                        {item.id}
                       </span>
                       <h3 className="text-base font-bold text-gray-900">
-                        {step.title}
+                        {item.title}
                       </h3>
                     </div>
                     <p className="text-sm text-gray-600 leading-relaxed pl-9">
-                      {step.description}
+                      {item.description}
                     </p>
                   </div>
                 </ScrollReveal>

@@ -1,33 +1,23 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { GALLERY_DATA } from '@/constants/galleryData';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function GallerySection() {
   const allImages = GALLERY_DATA.images;
   const headerImages = allImages.slice(0, 2);
   const gridImages = allImages.slice(2, 14);
 
-  // Mobile slider state (2 items per slide)
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const totalSlides = Math.ceil(allImages.length / 2);
+  // Data khusus mobile: 2 foto atas, lalu 8 foto di tengah format 2x2, sisa di bawah
+  const mobileTopImages = allImages.slice(0, 2);
+  const mobileMiddleImages = allImages.slice(2, 10);
+  const mobileBottomImages = allImages.slice(10);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalSlides);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [totalSlides]);
-
-  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % totalSlides);
-  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-
-  const renderCard = (item: { image: string; location: string; service: string }, idx: number) => (
+  const renderCard = (item: { image: string; location: string; service: string }, idx: number | string) => (
     <div key={idx} className="relative h-60 sm:h-72 lg:h-80 overflow-hidden group bg-gray-100">
       <div 
-        className="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700 ease-out"
+        className="w-full h-full bg-cover bg-center"
         style={{ backgroundImage: `url('${item.image}')` }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-all duration-300" />
@@ -46,7 +36,7 @@ export default function GallerySection() {
   return (
     <section id="galeri" className="relative py-0 bg-white text-gray-900 overflow-hidden w-full">
       
-      {/* ================= DESKTOP VIEW (Grid Original) ================= */}
+      {/* ================= DESKTOP VIEW (KEMBALI KE KODE ASLI TANPA PERUBAHAN) ================= */}
       <div className="hidden lg:grid w-full grid-cols-4 gap-0">
         <div className="col-span-2 h-80 p-8 flex flex-col justify-center bg-white z-10">
           <ScrollReveal className="h-full flex flex-col justify-center">
@@ -75,10 +65,8 @@ export default function GallerySection() {
         ))}
       </div>
 
-      {/* ================= MOBILE VIEW (Slider Nyambung 2-an Tanpa Jarak & Kotak Teks Terpisah) ================= */}
+      {/* ================= MOBILE VIEW (Khusus Mobile: Teks, 2 Foto Atas, 8 Foto Tengah Format 2x2) ================= */}
       <div className="block lg:hidden w-full">
-        
-        {/* Kotak Teks Mobile */}
         <div className="w-full p-6 bg-white">
           <ScrollReveal>
             <span className="text-[var(--green-dark)] font-mono text-xs tracking-widest uppercase font-semibold block mb-1">
@@ -93,53 +81,22 @@ export default function GallerySection() {
           </ScrollReveal>
         </div>
 
-        {/* Slider Track Foto Nyambung Tanpa Jarak */}
-        <div className="relative overflow-hidden w-full">
-          <div 
-            className="flex transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {Array.from({ length: totalSlides }).map((_, slideIdx) => {
-              const pair = allImages.slice(slideIdx * 2, slideIdx * 2 + 2);
-              return (
-                <div key={slideIdx} className="w-full flex-shrink-0 grid grid-cols-2 gap-0">
-                  {pair.map((item, idx) => renderCard(item, slideIdx * 2 + idx))}
-                </div>
-              );
-            })}
-          </div>
+        {/* 2 Foto di Atas */}
+        <div className="grid grid-cols-2 gap-0 w-full">
+          {mobileTopImages.map((item, idx) => renderCard(item, `top-${idx}`))}
         </div>
 
-        {/* Kontrol & Progress Bar Mobile */}
-        <div className="flex items-center justify-between p-4 bg-white">
-          <div className="flex items-center gap-1.5 flex-1 max-w-[160px] mr-4">
-            {Array.from({ length: totalSlides }).map((_, idx) => (
-              <div key={idx} className="h-1.5 flex-1 bg-gray-200 rounded-full overflow-hidden">
-                {idx === currentIndex && (
-                  <div className="h-full bg-[var(--green-bright)] animate-[progress_4s_linear_infinite]" />
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button 
-              onClick={prevSlide}
-              className="p-2.5 rounded-full bg-gray-100 hover:bg-[var(--green-bright)] hover:text-white text-gray-800 transition-colors shadow-sm cursor-pointer"
-              aria-label="Previous Slide"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button 
-              onClick={nextSlide}
-              className="p-2.5 rounded-full bg-gray-100 hover:bg-[var(--green-bright)] hover:text-white text-gray-800 transition-colors shadow-sm cursor-pointer"
-              aria-label="Next Slide"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+        {/* 8 Foto di Tengah dengan Format 2-2 */}
+        <div className="grid grid-cols-2 gap-0 w-full">
+          {mobileMiddleImages.map((item, idx) => renderCard(item, `mid-${idx}`))}
         </div>
 
+        {/* Sisa Foto di Bawah */}
+        {mobileBottomImages.length > 0 && (
+          <div className="grid grid-cols-2 gap-0 w-full">
+            {mobileBottomImages.map((item, idx) => renderCard(item, `bot-${idx}`))}
+          </div>
+        )}
       </div>
 
     </section>

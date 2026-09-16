@@ -9,6 +9,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
 import StatsSection from "@/components/sections/StatsSection";
+import CakupanSection from "@/components/sections/CakupanSection"
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <StatsSection />
       <AboutSection />
       <ServicesSection />
+      <CakupanSection />
       <WorkFlowSection />
       <GallerySection />
       <TestimonialSection />

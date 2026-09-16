@@ -5,7 +5,6 @@ import { ABOUT_DATA } from '@/constants/aboutData';
 import { SERVICES_DATA } from '@/constants/servicesData';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import Button from '@/components/ui/Button';
-import { ArrowRight } from 'lucide-react';
 
 export default function AboutSection() {
   return (
@@ -60,9 +59,9 @@ export default function AboutSection() {
                   {ABOUT_DATA.section3Images.map((imgUrl, index) => {
                     const translateClasses = index === 1 ? "translate-x-4" : index === 2 ? "-translate-x-4" : "";
                     return (
-                      <div key={index} className={`w-full h-32 sm:h-36 -skew-x-6 rounded-2xl overflow-hidden shadow-2xl border border-white/20 ${translateClasses} bg-gray-800 group`}>
+                      <div key={index} className={`w-full h-32 sm:h-36 -skew-x-6 rounded-2xl overflow-hidden shadow-2xl border border-white/20 ${translateClasses} bg-black`}>
                         <div 
-                          className="w-full h-full skew-x-6 scale-125 bg-cover bg-center group-hover:scale-150 transition-transform duration-700"
+                          className="w-full h-full skew-x-6 scale-110 bg-cover bg-center"
                           style={{ backgroundImage: `url('${imgUrl}')` }}
                         />
                       </div>
@@ -99,6 +98,7 @@ export default function AboutSection() {
               <Button
                 href="/tentang-kami"
                 variant="white"
+                className="px-10 py-4 sm:px-12 sm:py-4 shadow-lg text-base sm:text-lg"
               >
                 <span>Selengkapnya</span>
               </Button>
