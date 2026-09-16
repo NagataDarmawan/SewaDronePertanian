@@ -89,7 +89,7 @@ export default function Footer() {
               Ikuti Kami
             </h3>
             <ul className="space-y-2.5 text-sm">
-              {CONTACT_DATA.socials.map((social, idx) => (
+              {SITE_CONFIG.socials.map((social, idx) => (
                 <li key={idx}>
                   <a 
                     href={social.href} 
@@ -111,17 +111,18 @@ export default function Footer() {
 
         {/* Copyright & Author Card */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[var(--white)]/50 gap-4">
-          <p>© {new Date().getFullYear()} {SITE_CONFIG.name}. Hak Cipta Dilindungi.</p>
+          <p className="order-1">© {new Date().getFullYear()} {SITE_CONFIG.name}. Hak Cipta Dilindungi.</p>
           
-          {/* Card Dibuat Oleh */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-[var(--white)]/80 shadow-inner">
-            <Code2 className="w-3.5 h-3.5 text-[var(--green-bright,#22c55e)]" />
-            <span>Dibuat Oleh : <strong className="text-[var(--green-bright,#22c55e)] font-bold">Nagata Darmawan</strong></span>
-          </div>
-
-          <div className="flex gap-6">
+          {/* Link Kebijakan & S&K */}
+          <div className="flex gap-6 order-2 sm:order-3">
             <a href="#" className="hover:text-[var(--white)] transition-colors">Kebijakan Privasi</a>
             <a href="#" className="hover:text-[var(--white)] transition-colors">Syarat & Ketentuan</a>
+          </div>
+
+          {/* Card Dibuat Oleh */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-[var(--white)]/80 shadow-inner order-3 sm:order-2">
+            <Code2 className="w-3.5 h-3.5 text-[var(--green-bright,#22c55e)]" />
+            <span>Dibuat Oleh : <strong className="text-[var(--green-bright,#22c55e)] font-bold">Nagata Darmawan</strong></span>
           </div>
         </div>
 
