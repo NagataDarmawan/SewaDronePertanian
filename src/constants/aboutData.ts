@@ -45,7 +45,7 @@ export const ABOUT_DATA = {
   
   // Kisah Awal & Visi Misi
 story: {
-    subtitle: "TENTANG PERUSAHAAN",
+    subtitle: "TENTANG KAMI",
     title: "Inovasi Modernisasi Pertanian & Solusi Teknologi Presisi",
     bannerTagline: "Memaksimalkan efisiensi dan hasil produksi lahan melalui integrasi pemetaan digital serta penyemprotan presisi.",
     droneBannerImage: "/drone.jpg",
