@@ -23,23 +23,23 @@ export const ADVANTAGE_DATA: AdvantageData = {
   advantages: [
     {
       id: "01",
-      title: "Solusi Sesuai Kebutuhan",
-      description: "Setiap lahan memiliki karakteristik unik. Kami mendengarkan dan menganalisis kebutuhan spesifik Anda sebelum menentukan tindakan.",
+      title: "Solusi Disesuaikan dengan Kondisi Lahan",
+      description: "Setiap lahan memiliki karakteristik unik. Kami mendengarkan dan menganalisis kondisi area serta jenis tanaman Anda sebelum menentukan tindakan.",
     },
     {
       id: "02",
-      title: "Persiapan & Perencanaan Matang",
-      description: "Pekerjaan dipersiapkan secara detail berdasarkan area dan jenis layanan agar eksekusi di lapangan berjalan optimal.",
+      title: "Pengerjaan Rapi & Merata",
+      description: "Memanfaatkan teknologi pemetaan jalur penerbangan presisi untuk memastikan sebaran semprotan atau pupuk konsisten di seluruh area.",
     },
     {
       id: "03",
-      title: "Operasional Profesional",
-      description: "Pengoperasian drone ditangani langsung oleh tenaga ahli yang memastikan ketepatan dan keselamatan di lapangan.",
+      title: "Tim Pilot Bersertifikasi",
+      description: "Pengoperasian drone ditangani langsung oleh pilot profesional bersertifikat resmi demi ketepatan dan keselamatan di lapangan.",
     },
     {
       id: "04",
-      title: "Hasil Tuntas & Terjamin",
-      description: "Kami memastikan seluruh area yang dikerjakan telah diselesaikan dengan standar kualitas terbaik sesuai kesepakatan.",
+      title: "Komunikasi & Transparansi Lapangan",
+      description: "Berkoordinasi secara langsung dengan pemilik lahan selama pengerjaan dan menyampaikan laporan hasil pelaksanaan dengan transparan.",
     },
   ],
 };

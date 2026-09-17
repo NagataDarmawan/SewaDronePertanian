@@ -4,7 +4,7 @@ export const HERO_DATA = {
       id: "01",
       title: "Untuk Mereka yang Terus Menanam",
       description: "Setiap hari ada yang turun ke lahan, merawat tanaman, dan berharap hasil terbaik. Kami hadir untuk membantu pekerjaan itu jadi lebih ringan dengan teknologi drone.",
-      image: "https://th.bing.com/th/id/OIP.mea84JElLgKQzCQ1RVpsPAHaEJ?w=288&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+      image: "/drone.jpg"
     },
     {
       id: "02",

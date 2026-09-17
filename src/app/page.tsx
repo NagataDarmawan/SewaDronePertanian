@@ -7,9 +7,9 @@ import WorkFlowSection from "@/components/sections/AdvantageSection";
 import GallerySection from "@/components/sections/GallerySection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
-import TestimonialSection from "@/components/sections/TestimonialSection";
 import StatsSection from "@/components/sections/StatsSection";
 import CakupanSection from "@/components/sections/CakupanSection"
+import CaraKerjaSection from "@/components/sections/CaraKerjaSection"
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
       <CakupanSection />
       <WorkFlowSection />
       <GallerySection />
-      <TestimonialSection />
+      <CaraKerjaSection />
       <FAQSection />
       <CTASection />
       <Footer />

@@ -14,7 +14,11 @@ export default function CoverageMapSection() {
   ];
 
   return (
-    <section className="py-8 lg:py-12 bg-white text-gray-900 overflow-hidden">
+    /* 
+      -mt-6 sm:-mt-8: Margin minus pas untuk efek menumpuk
+      rounded-t-2xl sm:rounded-t-3xl: Radius lekukan disamakan persis seperti gambar
+    */
+    <section className="relative z-20 -mt-6 sm:-mt-8 py-10 lg:py-16 bg-white text-gray-900 overflow-hidden rounded-t-2xl sm:rounded-t-3xl shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Layout (Judul Kiri, Deskripsi Kanan) */}
@@ -61,7 +65,7 @@ export default function CoverageMapSection() {
                   <span className="relative inline-flex rounded-full h-3 sm:h-3.5 w-3 sm:w-3.5 bg-[var(--green-bright,#3e8e08)] border-2 border-white shadow-md"></span>
                 </span>
                 
-                {/* Card Nama Kota (Posisi absolut ke atas / bawah dari titik) */}
+                {/* Card Nama Kota */}
                 <div className={`absolute left-1/2 -translate-x-1/2 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-md shadow-sm text-[10px] sm:text-xs font-bold text-gray-900 whitespace-nowrap transition-transform group-hover:scale-110 ${
                   city.side === 'top' ? 'bottom-full mb-3' : 'top-full mt-3'
                 }`}>
@@ -73,7 +77,7 @@ export default function CoverageMapSection() {
           </div>
         </div>
 
-        {/* Catatan Info Cakupan di Luar Wilayah (Nama kota dicetak tebal) */}
+        {/* Catatan Info Cakupan di Luar Wilayah */}
         <div className="-mt-3 sm:-mt-4 relative z-20 max-w-2xl mx-auto p-3.5 sm:p-4 rounded-xl bg-gray-50 border border-gray-200/80 flex items-start gap-3 shadow-sm">
           <ShieldAlert className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 flex-shrink-0 mt-0.5" />
           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">

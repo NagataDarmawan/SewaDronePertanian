@@ -47,11 +47,13 @@ export const ABOUT_DATA = {
   story: {
     subtitle: "Kisah Awal & Perjalanan",
     title: "Lahir dari Keresahan Lapangan Menuju Solusi Presisi",
+    bannerTagline: "Memaksimalkan potensi lahan pertanian melalui modernisasi teknologi pemetaan dan penyemprotan presisi.",
+    // Field baru untuk mengganti foto drone banner bawah dari data
+    droneBannerImage: "/drone.jpg",
     paragraphs: [
       "Perjalanan kami dimulai dari sebuah komitmen sederhana: memahami tantangan nyata di tengah hektaran lahan pertanian lokal. Kami menyaksikan langsung berbagai kendala operasional yang dihadapi petani—mulai dari kelangkaan tenaga kerja manual untuk pemupukan, lambatnya proses pengerjaan di lahan luas, hingga tingginya risiko kesehatan akibat paparan bahan kimia secara langsung.",
       "Selama bertahun-tahun membersamai ekosistem agrikultur, kami terus berinovasi bertransformasi dari sekadar penyedia layanan manual menjadi penyedia solusi teknologi udara modern yang terintegrasi. Kematangan operasional kami tercermin dalam setiap standar pelayanan yang dirancang khusus untuk menjawab kebutuhan spesifik di lapangan."
     ],
-    // Foto untuk Section 1 (3 Garis Miring Cakar Macan)
     storyImages: [
       "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1000&auto=format&fit=crop",
@@ -64,7 +66,6 @@ export const ABOUT_DATA = {
       "Misi 2: Menjamin keamanan serta kesehatan pekerja melalui eliminasi kontak langsung dengan substansi kimia berbahaya.",
       "Misi 3: Berperan aktif dalam memajukan efisiensi agrikultur nasional melalui pemanfaatan teknologi yang ramah lingkungan."
     ],
-    // Foto untuk Section 2 (Visi & Misi Parallax Kanan)
-    missionImage: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1000&auto=format&fit=crop",
+    missionImage: "/drone2.jpg",
   },
 };

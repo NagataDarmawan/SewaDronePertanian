@@ -26,15 +26,16 @@ export default function HeroSection() {
         </div>
       ))}
       
-      {/* Area Konten Bawah Kiri */}
+      {/* Area Konten Bawah */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 flex flex-col justify-end">
         
-        <div className="max-w-2xl mb-4 sm:mb-6 relative min-h-[140px] sm:min-h-[180px] flex flex-col justify-end">
+        {/* Block Teks: mx-auto (Tengah di Mobile) & sm:mx-0 (Kiri di Desktop) */}
+        <div className="max-w-2xl mb-4 sm:mb-6 relative min-h-[140px] sm:min-h-[180px] flex flex-col justify-end mx-auto sm:mx-0 w-full">
           
           {HERO_DATA.slides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`transition-all duration-700 ease-out transform ${
+              className={`transition-all duration-700 ease-out transform text-left ${
                 index === currentIndex 
                   ? 'opacity-100 translate-y-0 relative block' 
                   : 'opacity-0 translate-y-6 absolute inset-0 pointer-events-none'
@@ -53,7 +54,7 @@ export default function HeroSection() {
               </ScrollReveal>
 
               <ScrollReveal delay={200}>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center justify-start gap-4">
                   <Button 
                     href="#services" 
                     variant="white"
@@ -68,7 +69,7 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Baris Bawah: Indikator & Navigasi Rapat ke Bawah */}
+        {/* Baris Bawah: Indikator & Navigasi */}
         <div className="flex items-center justify-between border-t border-white/10 pt-4">
           
           <div className="flex items-center gap-4">
