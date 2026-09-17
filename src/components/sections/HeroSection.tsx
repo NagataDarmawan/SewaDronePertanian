@@ -11,9 +11,9 @@ export default function HeroSection() {
   const { currentIndex, nextSlide, prevSlide, setCurrentIndex } = useAutoSlide(HERO_DATA.slides.length, 6000);
 
   return (
-    <section className="relative h-screen w-full flex items-end overflow-hidden bg-black pb-8 sm:pb-12 lg:pb-16">
+    <section className="relative h-[100dvh] w-full flex flex-col justify-end overflow-hidden bg-black pb-6 sm:pb-12 lg:pb-16">
       
-      {/* Background Images dengan Transisi Halus */}
+      {/* Background Images */}
       {HERO_DATA.slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -26,10 +26,10 @@ export default function HeroSection() {
         </div>
       ))}
       
-      {/* Area Konten Bawah */}
+      {/* Container Konten Utama (Posisi Rapat Bawah) */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 flex flex-col justify-end">
         
-        {/* Block Teks: mx-auto (Tengah di Mobile) & sm:mx-0 (Kiri di Desktop) */}
+        {/* Block Teks: Posisi Tengah Layar di Mobile (mx-auto), Rata Kiri (text-left) */}
         <div className="max-w-2xl mb-4 sm:mb-6 relative min-h-[140px] sm:min-h-[180px] flex flex-col justify-end mx-auto sm:mx-0 w-full">
           
           {HERO_DATA.slides.map((slide, index) => (
@@ -58,7 +58,7 @@ export default function HeroSection() {
                   <Button 
                     href="#services" 
                     variant="white"
-                    className="px-6 py-3 sm:px-8 sm:py-4 text-xs sm:text-base shadow-lg"
+                    className="px-6 py-2.5 sm:px-8 sm:py-4 text-xs sm:text-base shadow-lg"
                   >
                     <span>Lihat Layanan</span>
                   </Button>
@@ -70,7 +70,7 @@ export default function HeroSection() {
         </div>
 
         {/* Baris Bawah: Indikator & Navigasi */}
-        <div className="flex items-center justify-between border-t border-white/10 pt-4">
+        <div className="flex items-center justify-between border-t border-white/10 pt-3 sm:pt-4">
           
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 font-mono text-xs text-white/80 tracking-widest">
