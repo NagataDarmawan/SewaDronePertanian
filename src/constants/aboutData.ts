@@ -44,15 +44,14 @@ export const ABOUT_DATA = {
   },
   
   // Kisah Awal & Visi Misi
-  story: {
-    subtitle: "Kisah Awal & Perjalanan",
-    title: "Lahir dari Keresahan Lapangan Menuju Solusi Presisi",
-    bannerTagline: "Memaksimalkan potensi lahan pertanian melalui modernisasi teknologi pemetaan dan penyemprotan presisi.",
-    // Field baru untuk mengganti foto drone banner bawah dari data
+story: {
+    subtitle: "TENTANG PERUSAHAAN",
+    title: "Inovasi Modernisasi Pertanian & Solusi Teknologi Presisi",
+    bannerTagline: "Memaksimalkan efisiensi dan hasil produksi lahan melalui integrasi pemetaan digital serta penyemprotan presisi.",
     droneBannerImage: "/drone.jpg",
     paragraphs: [
-      "Perjalanan kami dimulai dari sebuah komitmen sederhana: memahami tantangan nyata di tengah hektaran lahan pertanian lokal. Kami menyaksikan langsung berbagai kendala operasional yang dihadapi petani—mulai dari kelangkaan tenaga kerja manual untuk pemupukan, lambatnya proses pengerjaan di lahan luas, hingga tingginya risiko kesehatan akibat paparan bahan kimia secara langsung.",
-      "Selama bertahun-tahun membersamai ekosistem agrikultur, kami terus berinovasi bertransformasi dari sekadar penyedia layanan manual menjadi penyedia solusi teknologi udara modern yang terintegrasi. Kematangan operasional kami tercermin dalam setiap standar pelayanan yang dirancang khusus untuk menjawab kebutuhan spesifik di lapangan."
+      "Kami berdiri sebagai entitas penyedia solusi agroteknologi yang berfokus pada modernisasi operasional sektor pertanian dan perkebunan. Berdasarkan evaluasi mendalam terhadap tantangan industri—seperti keterbatasan tenaga kerja, efisiensi waktu pengerjaan, dan risiko paparan zat kimia—kami menghadirkan pendekatan operasional berbasis teknologi udara terintegrasi.",
+      "Melalui kombinasi armada drone modern, analisis pemetaan terukur, dan standar operasional yang ketat, kami membantu pemilik lahan, kelompok tani, serta kemitraan bisnis mengoptimalkan penggunaan input pertanian. Kami berkomitmen memberikan layanan yang efisien, aman, dan dapat diandalkan secara berkelanjutan."
     ],
     storyImages: [
       "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1000&auto=format&fit=crop",
