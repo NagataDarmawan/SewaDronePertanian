@@ -34,19 +34,20 @@ export default function GallerySection() {
   );
 
   return (
-    <section id="galeri" className="relative py-0 bg-white text-gray-900 overflow-hidden w-full">
+    <section id="galeri" className="relative py-0 bg-black text-white overflow-hidden w-full">
       
-      {/* ================= DESKTOP VIEW (KEMBALI KE KODE ASLI TANPA PERUBAHAN) ================= */}
+      {/* ================= DESKTOP VIEW ================= */}
       <div className="hidden lg:grid w-full grid-cols-4 gap-0">
-        <div className="col-span-2 h-80 p-8 flex flex-col justify-center bg-white z-10">
+        {/* Header Teks dengan Gradasi Hijau Tua / Muda ke Hitam */}
+        <div className="col-span-2 h-80 p-8 flex flex-col justify-center bg-gradient-to-br from-[var(--green-dark)] via-zinc-900 to-black z-10">
           <ScrollReveal className="h-full flex flex-col justify-center">
-            <span className="text-[var(--green-dark)] font-mono text-xs tracking-widest uppercase font-semibold block mb-1">
+            <span className="text-[var(--green-bright)] font-mono text-xs tracking-widest uppercase font-semibold block mb-1">
               {GALLERY_DATA.subtitle}
             </span>
-            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 leading-tight">
+            <h2 className="text-4xl font-extrabold tracking-tight text-white leading-tight">
               {GALLERY_DATA.title}
             </h2>
-            <p className="text-base text-gray-600 leading-relaxed mt-2 line-clamp-2">
+            <p className="text-base text-gray-300 leading-relaxed mt-2 line-clamp-2">
               {GALLERY_DATA.description}
             </p>
           </ScrollReveal>
@@ -65,17 +66,18 @@ export default function GallerySection() {
         ))}
       </div>
 
-      {/* ================= MOBILE VIEW (Khusus Mobile: Teks, 2 Foto Atas, 8 Foto Tengah Format 2x2) ================= */}
+      {/* ================= MOBILE VIEW ================= */}
       <div className="block lg:hidden w-full">
-        <div className="w-full p-6 bg-white">
+        {/* Header Teks Mobile dengan Gradasi Hijau ke Hitam */}
+        <div className="w-full p-6 bg-gradient-to-b from-[var(--green-dark)] via-zinc-900 to-black">
           <ScrollReveal>
-            <span className="text-[var(--green-dark)] font-mono text-xs tracking-widest uppercase font-semibold block mb-1">
+            <span className="text-[var(--green-bright)] font-mono text-xs tracking-widest uppercase font-semibold block mb-1">
               {GALLERY_DATA.subtitle}
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
               {GALLERY_DATA.title}
             </h2>
-            <p className="text-sm text-gray-600 leading-relaxed mt-2">
+            <p className="text-sm text-gray-300 leading-relaxed mt-2">
               {GALLERY_DATA.description}
             </p>
           </ScrollReveal>

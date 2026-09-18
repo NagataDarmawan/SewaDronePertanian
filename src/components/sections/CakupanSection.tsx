@@ -77,11 +77,11 @@ export default function CoverageMapSection() {
           </div>
         </div>
 
-        {/* Catatan Info Cakupan di Luar Wilayah */}
-        <div className="-mt-3 sm:-mt-4 relative z-20 max-w-2xl mx-auto p-3.5 sm:p-4 rounded-xl bg-gray-50 border border-gray-200/80 flex items-start gap-3 shadow-sm">
+        {/* Catatan Info Cakupan di Luar Wilayah (Diubah ke Akses Emas/Amber) */}
+        <div className="-mt-3 sm:-mt-4 relative z-20 max-w-2xl mx-auto p-3.5 sm:p-4 rounded-xl bg-gradient-to-r from-amber-50 via-amber-100/70 to-amber-50 border border-amber-300/80 flex items-start gap-3 shadow-md">
           <ShieldAlert className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-            Lokasi lahan Anda berada di luar area <strong className="text-gray-900">{CONTACT_DATA.coverage}</strong>? Silakan hubungi tim kami terlebih dahulu untuk konfirmasi ketersediaan armada dan jadwal layanan.
+          <p className="text-xs sm:text-sm text-amber-900/90 leading-relaxed">
+            Lokasi lahan Anda berada di luar area <strong className="text-amber-950 font-bold">{CONTACT_DATA.coverage}</strong>? Silakan hubungi tim kami terlebih dahulu untuk konfirmasi ketersediaan armada dan jadwal layanan.
           </p>
         </div>
 
