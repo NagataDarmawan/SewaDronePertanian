@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
     email: "halo@agrofly.id",
     phone: "+62 812-3456-7890",
     whatsapp: "https://wa.me/6281234567890",
-    address: "Jl. Pertanian Modern No. 45, Jakarta Selatan",
+    address: "Gumayun, Kec. Dukuhwaru, Kab. Tegal, Jawa Tengah, Indonesia",
   },
   waMessageTemplate: (serviceTitle: string) => 
     `Halo AgroFly, saya mau konsultasi & booking untuk layanan *${serviceTitle}*.
