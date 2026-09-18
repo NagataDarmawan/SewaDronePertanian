@@ -50,12 +50,6 @@ export default function ServiceDetailPage() {
 
               {/* Konten Judul & Penjelasan di Dalam Gambar */}
               <div className="relative z-10 p-6 sm:p-10 lg:p-12 w-full max-w-4xl space-y-2.5">
-                <ScrollReveal>
-                  <span className="inline-block text-[var(--green-bright,#22c55e)] font-mono text-xs sm:text-sm tracking-widest uppercase font-bold px-3 py-1 rounded-full bg-black/50 border border-[var(--green-bright,#22c55e)]/30 backdrop-blur-md mb-1">
-                    Detail Layanan
-                  </span>
-                </ScrollReveal>
-
                 <ScrollReveal delay={100}>
                   <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">
                     {service.title}
