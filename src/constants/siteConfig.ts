@@ -56,7 +56,6 @@ Mohon informasi ketersediaan jadwal dan konfirmasinya. Terima kasih!`,
         { label: "Penyerbukan Buatan", href: "/layanan/penyerbukan-buatan" },
       ]
     },
-    { label: "Keunggulan", href: "/#keunggulan" },
     { label: "FAQ", href: "/#faq" },
     { label: "Kontak", href: "/kontak" },
   ],
