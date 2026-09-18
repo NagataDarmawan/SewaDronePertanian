@@ -34,26 +34,41 @@ export default function ServiceDetailPage() {
           </Link>
         </div>
 
-        {/* Header Title & Photo */}
-        <section className="relative pb-8 border-b border-gray-200">
+        {/* Header Title & Photo Card Overlay */}
+        <section className="relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ScrollReveal>
-              <span className="text-[var(--green-dark)] font-mono text-xs tracking-widest uppercase font-semibold block mb-2">
-                Detail Layanan
-              </span>
-              <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
-                {service.title}
-              </h1>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl">
-                {service.tagline || service.description}
-              </p>
-            </ScrollReveal>
-
-            <div className="mt-8 rounded-3xl overflow-hidden border border-gray-200 shadow-lg">
+            <div className="relative rounded-3xl overflow-hidden border border-gray-200 shadow-xl h-[360px] sm:h-[460px] lg:h-[500px] flex items-end">
+              
+              {/* Background Image (Warna Cerah/Alami) */}
               <div 
-                className="w-full h-[300px] sm:h-[420px] bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url('${service.mainPhoto || service.image || SERVICES_DATA.headerImage}')` }}
               />
+
+              {/* Overlay Gradasi Tipis di Bawah Agar Teks Terbaca */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+
+              {/* Konten Judul & Penjelasan di Dalam Gambar */}
+              <div className="relative z-10 p-6 sm:p-10 lg:p-12 w-full max-w-4xl space-y-2.5">
+                <ScrollReveal>
+                  <span className="inline-block text-[var(--green-bright,#22c55e)] font-mono text-xs sm:text-sm tracking-widest uppercase font-bold px-3 py-1 rounded-full bg-black/50 border border-[var(--green-bright,#22c55e)]/30 backdrop-blur-md mb-1">
+                    Detail Layanan
+                  </span>
+                </ScrollReveal>
+
+                <ScrollReveal delay={100}>
+                  <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white drop-shadow-md">
+                    {service.title}
+                  </h1>
+                </ScrollReveal>
+
+                <ScrollReveal delay={200}>
+                  <p className="text-xs sm:text-base lg:text-lg text-gray-200 leading-relaxed max-w-2xl drop-shadow-sm font-normal">
+                    {service.tagline || service.description}
+                  </p>
+                </ScrollReveal>
+              </div>
+
             </div>
           </div>
         </section>
@@ -72,7 +87,7 @@ export default function ServiceDetailPage() {
               </div>
 
               {/* Cocok Untuk - Minimalist List */}
-              {service.suitableFor?.length > 0 && (
+              {service.suitableFor && service.suitableFor.length > 0 && (
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Cocok Untuk</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -87,7 +102,7 @@ export default function ServiceDetailPage() {
               )}
 
               {/* Yang Perlu Disiapkan - Minimalist List */}
-              {service.clientPreparations?.length > 0 && (
+              {service.clientPreparations && service.clientPreparations.length > 0 && (
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Yang Perlu Disiapkan Pelanggan</h2>
                   <ul className="space-y-3">

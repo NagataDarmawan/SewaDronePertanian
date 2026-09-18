@@ -126,10 +126,13 @@ Mohon informasi ketersediaan jadwal dan konfirmasinya. Terima kasih!`;
             <Button
               type="submit"
               variant="primary"
-              className="w-full py-4 text-center justify-center font-bold shadow-md gap-2"
+              showIcon={false}
+              className="w-full py-4 font-bold shadow-md"
             >
-              <Send className="w-4 h-4" />
-              <span>Lanjutkan ke WhatsApp</span>
+              <span className="flex items-center justify-center gap-2">
+                <Send className="w-4 h-4 shrink-0" />
+                <span>Lanjutkan ke WhatsApp</span>
+              </span>
             </Button>
             <p className="text-[11px] text-center text-gray-400 mt-2">
               Detail akan otomatis terisi rapi pada obrolan WhatsApp Anda.

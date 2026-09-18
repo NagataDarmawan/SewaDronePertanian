@@ -1,5 +1,6 @@
 export const SITE_CONFIG = {
   name: "AgroFly",
+  logo: "/AgroFlyLogo.jpg", // Path atau URL foto logo Anda
   tagline: "Solusi layanan drone pertanian profesional untuk produktivitas dan efisiensi lahan modern.",
   contact: {
     email: "halo@agrofly.id",

@@ -16,11 +16,24 @@ export default function Footer() {
           
           {/* Brand & Tagline */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-2 text-[var(--white)] font-bold text-lg">
-              <div className="w-9 h-9 rounded-xl bg-[var(--green-bright)]/20 flex items-center justify-center border border-[var(--green-bright)]/40 text-[var(--green-bright)]">
-                <Cpu className="w-5 h-5" />
-              </div>
-              <span>{SITE_CONFIG.name}</span>
+            <Link href="/" className="flex items-center gap-3 text-xl sm:text-2xl font-bold tracking-tight group">
+              {SITE_CONFIG.logo ? (
+                <img 
+                  src={SITE_CONFIG.logo} 
+                  alt={`Logo ${SITE_CONFIG.name}`} 
+                  className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+              ) : (
+                <div className="w-12 h-12 rounded-xl bg-[var(--green-bright)]/20 flex items-center justify-center border border-[var(--green-bright)]/40 text-[var(--green-bright)]">
+                  <Cpu className="w-6 h-6" />
+                </div>
+              )}
+              
+              {/* Teks AgroFly Dua Warna: Agro (Hijau) & Fly (Putih) */}
+              <span>
+                <span className="text-[var(--green-bright,#22c55e)]">Agro</span>
+                <span className="text-white">Fly</span>
+              </span>
             </Link>
             
             <p className="text-sm text-[var(--white)]/70 max-w-sm leading-relaxed">

@@ -48,12 +48,16 @@ export default function CTASection() {
                   <Button
                     href={ctaUrl}
                     variant="white"
+                    showIcon={false}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="!px-8 !py-4 !text-base sm:!px-10 sm:!py-5 sm:!text-lg shadow-2xl"
                   >
-                    <MessageCircle className="w-5 h-5" />
-                    <span>{CTA_DATA.buttonText}</span>
+                    {/* Wrap dalam flex row agar sejajar di samping */}
+                    <span className="flex items-center justify-center gap-2.5">
+                      <MessageCircle className="w-5 h-5 shrink-0" />
+                      <span>{CTA_DATA.buttonText}</span>
+                    </span>
                   </Button>
                 </div>
               </ScrollReveal>

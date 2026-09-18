@@ -27,12 +27,20 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-4 pointer-events-none">
       <nav className="pointer-events-auto mx-auto px-6 py-2.5 flex items-center justify-between max-w-4xl bg-[var(--green-dark)]/70 backdrop-blur-xl border border-white/10 shadow-lg rounded-2xl">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 text-[var(--white)] font-bold text-base sm:text-lg">
-          <div className="w-8 h-8 rounded-xl bg-[var(--green-bright)]/20 flex items-center justify-center border border-[var(--green-bright)]/40 text-[var(--green-bright)]">
-            <Cpu className="w-4 h-4" />
-          </div>
-          <span>{SITE_CONFIG.name}</span>
+        
+        {/* Logo Image Only (Tulisan Brand Dihapus) */}
+        <Link href="/" className="flex items-center group">
+          {SITE_CONFIG.logo ? (
+            <img 
+              src={SITE_CONFIG.logo} 
+              alt={`Logo ${SITE_CONFIG.name}`} 
+              className="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          ) : (
+            <div className="w-10 h-10 rounded-xl bg-[var(--green-bright)]/20 flex items-center justify-center border border-[var(--green-bright)]/40 text-[var(--green-bright)]">
+              <Cpu className="w-5 h-5" />
+            </div>
+          )}
         </Link>
 
         {/* Menu Desktop */}
@@ -91,7 +99,7 @@ export default function Navbar() {
 
         {/* Tombol CTA Desktop */}
         <div className="hidden md:block">
-          <Button href={consultationUrl} variant="white" target="_blank" rel="noopener noreferrer">
+          <Button href={consultationUrl} variant="white" showIcon={false} target="_blank" rel="noopener noreferrer">
             Mulai Konsultasi
           </Button>
         </div>
@@ -156,7 +164,7 @@ export default function Navbar() {
               </Link>
             );
           })}
-          <Button href={consultationUrl} variant="white" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="w-full mt-2">
+          <Button href={consultationUrl} variant="white" showIcon={false} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="w-full mt-2">
             Mulai Konsultasi
           </Button>
         </div>
